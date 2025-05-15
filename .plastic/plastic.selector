@@ -1,0 +1,4 @@
+repository "TestBrickBreaker/TestBrickBreaker@6872170250642@cloud"
+  path "/"
+    br "/main"
+    co "/main"
