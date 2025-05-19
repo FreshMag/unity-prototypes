@@ -26,8 +26,9 @@ public class PathSwitch : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canSwitch)
         {
             RotatePlatform(-90);
-            gameObject.SetActive(false);
+            transform.parent.gameObject.SetActive(false);
             newAxis.gameObject.SetActive(true);
+            canSwitch = false;
         }
     }
 
