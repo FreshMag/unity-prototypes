@@ -25,15 +25,26 @@ public class PathSwitch : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && canSwitch)
         {
-            RotatePlatform(-90);
             transform.parent.gameObject.SetActive(false);
             newAxis.gameObject.SetActive(true);
+            RotatePlatformToMatchNewAxis();
             canSwitch = false;
         }
     }
 
-    void RotatePlatform(float angle)
+    void RotatePlatformToMatchNewAxis()
     {
-        FindAnyObjectByType<MousePlatform>().transform.Rotate(0, 0, angle);
+        MousePlatform platform = FindAnyObjectByType<MousePlatform>();
+        if (platform == null || newAxis == null) return;
+
+        // Get the up directions
+        Vector3 targetUp = newAxis.transform.GetComponentInChildren<Path>().transform.up;
+        
+        Vector3 currentUp = platform.transform.up;
+
+        // Calculate rotation from current up to target up
+        Quaternion rotation = Quaternion.FromToRotation(currentUp, targetUp);
+        // Apply rotation to the platform
+        platform.transform.rotation = rotation * platform.transform.rotation;
     }
 }
