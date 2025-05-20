@@ -10,14 +10,16 @@ public class PathSwitch : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             canSwitch = true;
+            other.GetComponent<MousePlatform>()?.switchIndicator.SetActive(true);
         }
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             canSwitch = false;
+            other.GetComponent<MousePlatform>()?.switchIndicator.SetActive(false);
         }
     }
 
@@ -39,7 +41,7 @@ public class PathSwitch : MonoBehaviour
 
         // Get the up directions
         Vector3 targetUp = newAxis.transform.GetComponentInChildren<Path>().transform.up;
-        
+
         Vector3 currentUp = platform.transform.up;
 
         // Calculate rotation from current up to target up

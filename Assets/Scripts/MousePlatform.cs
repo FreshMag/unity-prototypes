@@ -6,6 +6,9 @@ using UnityEngine.UIElements;
 public class MousePlatform : MonoBehaviour
 {
     public bool canMove = true;
+    
+    [Header("UI")]
+    public GameObject switchIndicator;
 
     [Header("Assign one active path")]
     public Path[] paths;
