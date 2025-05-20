@@ -7,11 +7,17 @@ public class BallComponent : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isLaunched = false;
+    private bool hasStarted = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic; // Wait for launch
+        hasStarted = true;
+        if (isLaunched)
+        {
+            LaunchBall();
+        }
     }
 
     void Update()
@@ -20,6 +26,19 @@ public class BallComponent : MonoBehaviour
         if (!isLaunched && Input.GetMouseButtonDown(0))
         {
             LaunchBall();
+        }
+    }
+
+    // this ugly workaround is necessary to launch a ball that hasn't been "Started" yet.
+    public void EnableMovement()
+    {
+        if (hasStarted)
+        {
+            LaunchBall();
+        }
+        else
+        {
+            isLaunched = true;
         }
     }
 
