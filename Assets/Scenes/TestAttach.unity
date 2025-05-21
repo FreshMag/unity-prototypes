@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa09933e113d8c439d1b9c1bd2cce01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 214020922}
   pointerUI: {fileID: 1223609103}
   screenEdgeBuffer: 5
 --- !u!1 &557430335
@@ -1324,6 +1324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newCamera: {fileID: 904644343}
+  transitionDuration: 15
 --- !u!61 &942458273
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1721,7 +1722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1223609103
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3368,11 +3369,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6744482982133742917, guid: 27851da11e724e545af74b95ca06cd07, type: 3}
       propertyPath: powerUpChance
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6744482982133742917, guid: 27851da11e724e545af74b95ca06cd07, type: 3}
       propertyPath: powerUpPrefabs.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6744482982133742917, guid: 27851da11e724e545af74b95ca06cd07, type: 3}
       propertyPath: 'powerUpPrefabs.Array.data[0]'
@@ -3381,11 +3382,11 @@ PrefabInstance:
     - target: {fileID: 6744482982133742917, guid: 27851da11e724e545af74b95ca06cd07, type: 3}
       propertyPath: 'powerUpPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 5397479553903718436, guid: af10dc23a65a32d48b36b0c15e6345c1, type: 3}
+      objectReference: {fileID: 6310007068582895850, guid: 70c6349f42051b348b65180b4042f582, type: 3}
     - target: {fileID: 6744482982133742917, guid: 27851da11e724e545af74b95ca06cd07, type: 3}
       propertyPath: 'powerUpPrefabs.Array.data[2]'
       value: 
-      objectReference: {fileID: 7539369400102070840, guid: 66e4b749e985eed488344bd10493127a, type: 3}
+      objectReference: {fileID: 5397479553903718436, guid: af10dc23a65a32d48b36b0c15e6345c1, type: 3}
     - target: {fileID: 6744482982133742917, guid: 27851da11e724e545af74b95ca06cd07, type: 3}
       propertyPath: 'powerUpPrefabs.Array.data[3]'
       value: 
@@ -9357,6 +9358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newCamera: {fileID: 1920310106}
+  transitionDuration: 15
 --- !u!61 &1678504705
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19486,6 +19488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newCamera: {fileID: 1116408606}
+  transitionDuration: 15
 --- !u!61 &2063972333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19578,6 +19581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newCamera: {fileID: 904644343}
+  transitionDuration: 15
 --- !u!61 &2142169023
 BoxCollider2D:
   m_ObjectHideFlags: 0
