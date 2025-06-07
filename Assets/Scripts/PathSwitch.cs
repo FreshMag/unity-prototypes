@@ -29,7 +29,7 @@ public class PathSwitch : MonoBehaviour
         {
             transform.parent.gameObject.SetActive(false);
             newAxis.gameObject.SetActive(true);
-            //RotatePlatformToMatchNewAxis();
+            RotatePlatformToMatchNewAxis();
             canSwitch = false;
         }
     }
