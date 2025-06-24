@@ -4,12 +4,13 @@ using UnityEngine;
 public class BallComponent : MonoBehaviour
 {
     public float initialSpeed = 5f;
-    public float pushForce = 2f;
-    public float pushCooldown = 0.2f; // seconds between pushes
+    
     private Rigidbody2D rb;
-    private bool isLaunched = false;
+    
+    [HideInInspector]
+    public bool isLaunched = false;
     private bool hasStarted = false;
-    private float lastPushTime = 0f;
+    
 
     void Start()
     {
@@ -28,19 +29,6 @@ public class BallComponent : MonoBehaviour
         if (!isLaunched && Input.GetMouseButtonDown(0))
         {
             LaunchBall();
-        }
-
-        float time = Time.time;
-
-        if (isLaunched && Input.GetKey(KeyCode.A) && time >= lastPushTime + pushCooldown)
-        {
-            rb.AddForce(Vector2.left * pushForce, ForceMode2D.Impulse);
-            lastPushTime = time;
-        }
-        else if (isLaunched && Input.GetKey(KeyCode.D) && time >= lastPushTime + pushCooldown)
-        {
-            rb.AddForce(Vector2.right * pushForce, ForceMode2D.Impulse);
-            lastPushTime = time;
         }
     }
 
